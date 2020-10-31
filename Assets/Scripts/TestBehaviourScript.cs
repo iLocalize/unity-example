@@ -15,7 +15,7 @@ public class TestBehaviourScript : MonoBehaviour
 
     private void Awake()
     {
-        iLocalize.Init("1c28610b751a42f0a87ff2707e1acd7a", "zh-Hans",true);
+        iLocalize.Init("THIS IS YOUR APP ID", "THIS IS LANGUAGE", true);
         iLocalize.SetOnTranslationPreparedCallback(onTranslationPrepared);
     }
     void onTranslationPrepared(bool isSuccess)
