@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies>
+  <androidPackages>
+    <androidPackage spec='net.aihelp:android-aihelp-aar:2.1.+'>
+    </androidPackage>
+  </androidPackages>
+  <iosPods>
+    <iosPod name="AIHelpSDK" version="~> 2.1.0"/>
+  </iosPods>
+</dependencies>
