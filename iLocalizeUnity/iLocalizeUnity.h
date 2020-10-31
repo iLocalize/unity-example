@@ -7,8 +7,8 @@
 
 #import <iLocalizeSDK/iLocalizeSDK.h>
 
-#ifndef Go2GlobalUnity_h
-#define Go2GlobalUnity_h
+#ifndef iLocalizeUnity_h
+#define iLocalizeUnity_h
 
 extern "C" void unity_init (const char* appKey, const char* language, bool isInternationalizing);
 
