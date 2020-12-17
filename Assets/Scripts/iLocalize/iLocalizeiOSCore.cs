@@ -38,13 +38,14 @@ public class iLocalizeiOSCore : IiLocalizeCore
     private static extern void unity_setLogEnable(bool enable);
 
     [DllImport("__Internal")]
-    private static extern void unity_evaluateString(string code);
+    private static extern void unity_evaluateString(string code,string stringContent);
 
     [DllImport("__Internal")]
-    private static extern void unity_updateUserInfo_g2g(iLocalizeUserConfig userConfig);
+    private static extern void unity_updateUserInfo_g2g(string userId, string userTags);
 
     [DllImport("__Internal")]
-    private static extern void unity_checkStringOverflow(iLCheckOverflowConfig checkOverflowConfig);
+    private static extern void unity_checkStringOverflow(string pageId, string stringId, string stringRealContent, float designWidth, float designHeight,float measuredWidth, float measuredHeight);
+    
 
 
 
@@ -85,20 +86,20 @@ public class iLocalizeiOSCore : IiLocalizeCore
         unity_setLogEnable(enable);
     }
 
-    public void EvaluateString(string code)
+    public void EvaluateString(string code, string stringContent)
     {
-        unity_evaluateString(code);
+        unity_evaluateString(code, stringContent);
     }
 
     public void UpdateUserInfo(iLocalizeUserConfig userConfig)
     {
         Console.WriteLine("---------> UpdateUserInfo:");
-        unity_updateUserInfo_g2g(userConfig);
+        unity_updateUserInfo_g2g(userConfig.GetUserId(), userConfig.GetUserTags());
     }
 
     public void CheckStringOverflow(iLCheckOverflowConfig checkOverflowConfig)
     {
-        unity_checkStringOverflow(checkOverflowConfig);
+        unity_checkStringOverflow(checkOverflowConfig.GetPageId(), checkOverflowConfig.GetStringId(), checkOverflowConfig.GetStringRealContent(), checkOverflowConfig.GetDesignWidth(), checkOverflowConfig.GetDesignHeight(), checkOverflowConfig.GetMeasuredWidth(), checkOverflowConfig.GetMeasuredHeight());
     }
 
 }

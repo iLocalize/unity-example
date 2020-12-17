@@ -5,10 +5,10 @@
 //  Copyright © 2020 AIHelp. All rights reserved.
 //
 
-#import <iLocalizeSDK/iLocalizeSDK.h>
+#import <iLocalize.h>
 
-#ifndef iLocalizeUnity_h
-#define iLocalizeUnity_h
+#ifndef Go2GlobalUnity_h
+#define Go2GlobalUnity_h
 
 extern "C" void unity_init (const char* appKey, const char* language, bool isInternationalizing);
 
@@ -22,10 +22,10 @@ extern "C" void unity_updateLanguage(const char* language);
 
 extern "C" void unity_setLogEnable(bool enable);
 
-extern "C" void unity_evaluateString(const char* code);
+extern "C" void unity_evaluateString(const char* code, const char* stringContent);
 
-extern "C" void unity_updateUserInfo_g2g(const char* userTags);
+extern "C" void unity_updateUserInfo_g2g(const char* userId, const char* userTags);
 
-
+extern "C" void unity_checkStringOverflow(const char* pageId, const char* stringId, const char* stringRealContent, float designWidth, float designHeight,float measuredWidth, float measuredHeight);
 
 #endif

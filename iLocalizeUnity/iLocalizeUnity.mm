@@ -58,16 +58,34 @@ extern "C" {
         [iLocalize setLogEnable:enable];
     }
 
-    void unity_evaluateString(const char* code) {
+    void unity_evaluateString(const char* code, const char* stringContent) {
         NSString *_code = charToNSString(code);
-        [iLocalize evaluateStringWithCode:_code];
+        NSString *_stringContent = charToNSString(stringContent);
+        [iLocalize evaluateStringWithCode:_code stringContent:_stringContent];
     }
 
-    void unity_updateUserInfo_g2g(const char* userTags) {
+    void unity_updateUserInfo_g2g(const char* userId,const char* userTags) {
         iLocalizeUserConfigBuilder *configBuilder = [[iLocalizeUserConfigBuilder alloc] init];
         NSString *_userTags = charToNSString(userTags);
+        NSString *_userId = charToNSString(userId);
         configBuilder.userTags = _userTags;
+        configBuilder.userId = _userId;
         [iLocalize setUserConfig:configBuilder.build];
+    }
+
+    void unity_checkStringOverflow(const char* pageId, const char* stringId, const char* stringRealContent, float designWidth, float designHeight,float measuredWidth, float measuredHeight) {
+        iLCheckOverflowConfigBuilder *overflowConfigBuilder = [[iLCheckOverflowConfigBuilder alloc] init];
+        NSString *_pageId = charToNSString(pageId);
+        NSString *_stringId = charToNSString(stringId);
+        NSString *_stringRealContent = charToNSString(stringRealContent);
+        overflowConfigBuilder.pageId = _pageId;
+        overflowConfigBuilder.stringId = _stringId;
+        overflowConfigBuilder.stringRealContent = _stringRealContent;
+        overflowConfigBuilder.designWidth = designWidth;
+        overflowConfigBuilder.designHeight = designHeight;
+        overflowConfigBuilder.measuredWidth = measuredWidth;
+        overflowConfigBuilder.measuredHeight = measuredHeight;
+        [iLocalize checkStringOverflow:overflowConfigBuilder.build];
     }
     
 #if defined(__cplusplus)

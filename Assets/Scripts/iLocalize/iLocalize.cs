@@ -32,9 +32,9 @@ public class iLocalize{
         iLocalizeCore.GetInstance().UpdateUserInfo(userConfig);
     }
 
-    public static void EvaluateString(string code)
+    public static void EvaluateString(string code, string stringContent)
     {
-        iLocalizeCore.GetInstance().EvaluateString(code);
+        iLocalizeCore.GetInstance().EvaluateString(code, stringContent);
     }
 
     public static void CheckStringOverflow(iLCheckOverflowConfig checkOverflowConfig)

@@ -13,7 +13,7 @@ public interface IiLocalizeCore
     string GetString(string code, string defaultStr);
     void UpdateLanguage(string language);
     void SetLogEnable(bool enable);
-    void EvaluateString(string code);
+    void EvaluateString(string code,string stringContent);
     void UpdateUserInfo(iLocalizeUserConfig userConfig);
     void CheckStringOverflow(iLCheckOverflowConfig checkOverflowConfig);
 

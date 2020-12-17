@@ -65,10 +65,10 @@ public class iLocalizeCore{
         localLizeCore.UpdateUserInfo(userConfig);
     }
 
-    public void EvaluateString(string code)
+    public void EvaluateString(string code, string stringContent)
     {
         if (!IsHelpCorePrepared()) return;
-        localLizeCore.EvaluateString(code);
+        localLizeCore.EvaluateString(code, stringContent);
     }
 
     public void CheckStringOverflow(iLCheckOverflowConfig checkOverflowConfig)

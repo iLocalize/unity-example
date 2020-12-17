@@ -64,11 +64,11 @@ public class iLocalizeAndroidCore : IiLocalizeCore
         }
     }
 
-    public void EvaluateString(string code)
+    public void EvaluateString(string code,string stringContent)
     {
         if (javaSupport != null)
         {
-            javaSupport.CallStatic("evaluateString", code);
+            javaSupport.CallStatic("evaluateString", code,stringContent);
         }
     }
 
