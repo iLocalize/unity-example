@@ -15,6 +15,7 @@ public interface IiLocalizeCore
     void SetLogEnable(bool enable);
     void EvaluateString(string code);
     void UpdateUserInfo(iLocalizeUserConfig userConfig);
+    void CheckStringOverflow(iLCheckOverflowConfig checkOverflowConfig);
 
 #if UNITY_ANDROID
     string GetPageString(string pageId, string code, string defaultStr);

@@ -41,7 +41,10 @@ public class iLocalizeiOSCore : IiLocalizeCore
     private static extern void unity_evaluateString(string code);
 
     [DllImport("__Internal")]
-    private static extern void unity_updateUserInfo_g2g(string userTags);
+    private static extern void unity_updateUserInfo_g2g(iLocalizeUserConfig userConfig);
+
+    [DllImport("__Internal")]
+    private static extern void unity_checkStringOverflow(iLCheckOverflowConfig checkOverflowConfig);
 
 
 
@@ -90,7 +93,12 @@ public class iLocalizeiOSCore : IiLocalizeCore
     public void UpdateUserInfo(iLocalizeUserConfig userConfig)
     {
         Console.WriteLine("---------> UpdateUserInfo:");
-        unity_updateUserInfo_g2g(userConfig.GetUserTags());
+        unity_updateUserInfo_g2g(userConfig);
+    }
+
+    public void CheckStringOverflow(iLCheckOverflowConfig checkOverflowConfig)
+    {
+        unity_checkStringOverflow(checkOverflowConfig);
     }
 
 }

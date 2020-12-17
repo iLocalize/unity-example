@@ -37,6 +37,12 @@ public class iLocalize{
         iLocalizeCore.GetInstance().EvaluateString(code);
     }
 
+    public static void CheckStringOverflow(iLCheckOverflowConfig checkOverflowConfig)
+    {
+        iLocalizeCore.GetInstance().CheckStringOverflow(checkOverflowConfig);
+    }
+
+
 #if UNITY_ANDROID
 
     public static string GetPageString(string pageId, string code, string defaultStr = "")

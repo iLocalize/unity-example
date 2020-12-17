@@ -71,6 +71,12 @@ public class iLocalizeCore{
         localLizeCore.EvaluateString(code);
     }
 
+    public void CheckStringOverflow(iLCheckOverflowConfig checkOverflowConfig)
+    {
+        if (!IsHelpCorePrepared()) return;
+        localLizeCore.CheckStringOverflow(checkOverflowConfig);
+    }
+
 
 #if UNITY_ANDROID
 

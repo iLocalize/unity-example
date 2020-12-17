@@ -80,6 +80,14 @@ public class iLocalizeAndroidCore : IiLocalizeCore
         }
     }
 
+    public void CheckStringOverflow(iLCheckOverflowConfig checkOverflowConfig)
+    {
+        if (javaSupport != null)
+        {
+            javaSupport.CallStatic("checkStringOverflow", GetiLCheckOverflowConfig(checkOverflowConfig));
+        }
+    }
+
     public void SetScreenshotPageId(string pageId)
     {
         if (javaSupport != null)
