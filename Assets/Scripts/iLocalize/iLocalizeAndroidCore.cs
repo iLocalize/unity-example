@@ -107,7 +107,21 @@ public class iLocalizeAndroidCore : IiLocalizeCore
     private AndroidJavaObject GetiLocalizeUserConfig(iLocalizeUserConfig config)
     {
         AndroidJavaObject builder = new AndroidJavaObject("net.ilocalize.config.UserConfig$Builder");
+        builder.Call<AndroidJavaObject>("setUserId", config.GetUserId());
         builder.Call<AndroidJavaObject>("setUserTags", config.GetUserTags());
+        return builder.Call<AndroidJavaObject>("build");
+    }
+
+    private AndroidJavaObject GetiLCheckOverflowConfig(iLCheckOverflowConfig config)
+    {
+        AndroidJavaObject builder = new AndroidJavaObject("net.ilocalize.config.CheckOverflowConfig$Builder");
+        builder.Call<AndroidJavaObject>("setPageId", config.GetPageId());
+        builder.Call<AndroidJavaObject>("setStringId", config.GetStringId());
+        builder.Call<AndroidJavaObject>("setStringRealContent", config.GetStringRealContent());
+        builder.Call<AndroidJavaObject>("setDesignWidth", config.GetDesignWidth());
+        builder.Call<AndroidJavaObject>("setDesignHeight", config.GetDesignHeight());
+        builder.Call<AndroidJavaObject>("setMeasuredWidth", config.GetMeasuredWidth());
+        builder.Call<AndroidJavaObject>("setMeasuredHeight", config.GetMeasuredHeight());
         return builder.Call<AndroidJavaObject>("build");
     }
 
