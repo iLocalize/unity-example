@@ -88,6 +88,14 @@ public class iLocalizeAndroidCore : IiLocalizeCore
         }
     }
 
+    public void EnableEvaluateFunction(bool enable)
+    {
+        if (javaSupport != null)
+        {
+            javaSupport.CallStatic("enableEvaluateFunction", enable);
+        }
+    }
+
     public void SetScreenshotPageId(string pageId)
     {
         if (javaSupport != null)

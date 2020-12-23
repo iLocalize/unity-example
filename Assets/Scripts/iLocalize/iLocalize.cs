@@ -42,6 +42,11 @@ public class iLocalize{
         iLocalizeCore.GetInstance().CheckStringOverflow(checkOverflowConfig);
     }
 
+    public static void EnableEvaluateFunction(bool enable)
+    {
+        iLocalizeCore.GetInstance().EnableEvaluateFunction(enable);
+    }
+
 
 #if UNITY_ANDROID
 

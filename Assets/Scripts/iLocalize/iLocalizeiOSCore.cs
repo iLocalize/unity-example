@@ -45,7 +45,9 @@ public class iLocalizeiOSCore : IiLocalizeCore
 
     [DllImport("__Internal")]
     private static extern void unity_checkStringOverflow(string pageId, string stringId, string stringRealContent, float designWidth, float designHeight,float measuredWidth, float measuredHeight);
-    
+
+    [DllImport("__Internal")]
+    private static extern void unity_enableEvaluateFunction(bool isOpen);
 
 
 
@@ -100,6 +102,11 @@ public class iLocalizeiOSCore : IiLocalizeCore
     public void CheckStringOverflow(iLCheckOverflowConfig checkOverflowConfig)
     {
         unity_checkStringOverflow(checkOverflowConfig.GetPageId(), checkOverflowConfig.GetStringId(), checkOverflowConfig.GetStringRealContent(), checkOverflowConfig.GetDesignWidth(), checkOverflowConfig.GetDesignHeight(), checkOverflowConfig.GetMeasuredWidth(), checkOverflowConfig.GetMeasuredHeight());
+    }
+
+    public void EnableEvaluateFunction(bool enable)
+    {
+        unity_enableEvaluateFunction(enable);
     }
 
 }
