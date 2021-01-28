@@ -73,7 +73,7 @@ extern "C" {
         [iLocalize setUserConfig:configBuilder.build];
     }
 
-    void unity_checkStringOverflow(const char* pageId, const char* stringId, const char* stringRealContent, float designWidth, float designHeight,float measuredWidth, float measuredHeight) {
+    void unity_checkStringOverflow(const char* pageId, const char* stringId, const char* stringRealContent, float designWidth, float designHeight,float measuredWidth, float measuredHeight, const char* fontFamily,float fontSize,float lineSpacing,int textAlign, bool isBold, bool isItalic, bool isMultipleLine) {
         iLCheckOverflowConfigBuilder *overflowConfigBuilder = [[iLCheckOverflowConfigBuilder alloc] init];
         NSString *_pageId = charToNSString(pageId);
         NSString *_stringId = charToNSString(stringId);
@@ -85,6 +85,14 @@ extern "C" {
         overflowConfigBuilder.designHeight = designHeight;
         overflowConfigBuilder.measuredWidth = measuredWidth;
         overflowConfigBuilder.measuredHeight = measuredHeight;
+        
+        overflowConfigBuilder.fontFamily = fontFamily;
+        overflowConfigBuilder.fontSize = fontSize;
+        overflowConfigBuilder.lineSpacing = lineSpacing;
+        overflowConfigBuilder.textAlign = textAlign;
+        overflowConfigBuilder.isBold = isBold;
+        overflowConfigBuilder.isItalic = isItalic;
+        overflowConfigBuilder.isMultipleLine = isMultipleLine;
         [iLocalize checkStringOverflow:overflowConfigBuilder.build];
     }
     

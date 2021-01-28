@@ -49,6 +49,14 @@ public class iLCheckOverflowConfig
     private float measuredWidth;
     private float measuredHeight;
 
+    private string fontFamily;
+    private float fontSize;
+    private float lineSpacing;
+    private int textAlign;
+    private bool isBold;
+    private bool isItalic;
+    private bool isMultipleLine;
+
     public class Builder
     {
         private string pageId = "";
@@ -58,6 +66,14 @@ public class iLCheckOverflowConfig
         private float designHeight = 0;
         private float measuredWidth = 0;
         private float measuredHeight = 0;
+
+        private string fontFamily = "";
+        private float fontSize = 0;
+        private float lineSpacing = 0;
+        private int textAlign = 0;
+        private bool isBold = false;
+        private bool isItalic = false;
+        private bool isMultipleLine = false;
 
         public Builder SetPageId(string pageId)
         {
@@ -95,9 +111,52 @@ public class iLCheckOverflowConfig
             return this;
         }
 
+        public Builder SetFontFamily(string fontFamily)
+        {
+            this.fontFamily = fontFamily;
+            return this;
+        }
+
+        public Builder SetFontSize(float fontSize)
+        {
+            this.fontSize = fontSize;
+            return this;
+        }
+
+        public Builder SetLineSpacing(float lineSpacing)
+        {
+            this.lineSpacing = lineSpacing;
+            return this;
+        }
+
+        public Builder SetTextAlign(int textAlign)
+        {
+            this.textAlign = textAlign;
+            return this;
+        }
+
+        public Builder SetIsBold(bool isBold)
+        {
+            this.isBold = isBold;
+            return this;
+        }
+
+        public Builder SetIsItalic(bool isItalic)
+        {
+            this.isItalic = isItalic;
+            return this;
+        }
+
+        public Builder SetIsMultipleLine(bool isMultipleLine)
+        {
+            this.isMultipleLine = isMultipleLine;
+            return this;
+        }
+
+
         public iLCheckOverflowConfig build()
         {
-            return new iLCheckOverflowConfig(pageId, stringId, stringRealContent, designWidth, designHeight, measuredWidth, measuredHeight);
+            return new iLCheckOverflowConfig(pageId, stringId, stringRealContent, designWidth, designHeight, measuredWidth, measuredHeight, fontFamily, fontSize, lineSpacing, textAlign, isBold, isItalic, isMultipleLine);
         }
 
     }
@@ -130,8 +189,36 @@ public class iLCheckOverflowConfig
     {
         return measuredHeight;
     }
+    public string GetFontFamily()
+    {
+        return fontFamily;
+    }
+    public float GetFontSize()
+    {
+        return fontSize;
+    }
+    public float GetLineSpacing()
+    {
+        return lineSpacing;
+    }
+    public int GetTextAlign()
+    {
+        return textAlign;
+    }
+    public bool GetIsBold()
+    {
+        return isBold;
+    }
+    public bool GetIsItalic()
+    {
+        return isItalic;
+    }
+    public bool GetIsMultipleLine()
+    {
+        return isMultipleLine;
+    }
 
-    private iLCheckOverflowConfig(string pageId, string stringId, string stringRealContent, float designWidth, float designHeight, float measuredWidth, float measuredHeight)
+    private iLCheckOverflowConfig(string pageId, string stringId, string stringRealContent, float designWidth, float designHeight, float measuredWidth, float measuredHeight, string fontFamily, float fontSize, float lineSpacing, int textAlign, bool isBold, bool isItalic, bool isMultipleLine)
     {
         this.pageId = pageId;
         this.stringId = stringId;
@@ -140,6 +227,13 @@ public class iLCheckOverflowConfig
         this.designHeight = designHeight;
         this.measuredWidth = measuredWidth;
         this.measuredHeight = measuredHeight;
+        this.fontFamily = fontFamily;
+        this.fontSize = fontSize;
+        this.lineSpacing = lineSpacing;
+        this.textAlign = textAlign;
+        this.isBold = isBold;
+        this.isItalic = isItalic;
+        this.isMultipleLine = isMultipleLine;
     }
 
 }

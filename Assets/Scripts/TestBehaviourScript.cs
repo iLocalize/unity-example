@@ -56,7 +56,7 @@ public class TestBehaviourScript : MonoBehaviour
 
     void evaluateStringClick()
     {
-        iLocalize.EvaluateString("2222");
+        iLocalize.EvaluateString("2222","");
     }
 
     void updateUserInfoClick()

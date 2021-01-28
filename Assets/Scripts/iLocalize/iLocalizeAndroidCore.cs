@@ -130,6 +130,15 @@ public class iLocalizeAndroidCore : IiLocalizeCore
         builder.Call<AndroidJavaObject>("setDesignHeight", config.GetDesignHeight());
         builder.Call<AndroidJavaObject>("setMeasuredWidth", config.GetMeasuredWidth());
         builder.Call<AndroidJavaObject>("setMeasuredHeight", config.GetMeasuredHeight());
+
+        builder.Call<AndroidJavaObject>("setFontFamily", config.GetFontFamily());
+        builder.Call<AndroidJavaObject>("setFontSize", config.GetFontSize());
+        builder.Call<AndroidJavaObject>("setLineSpacing", config.GetLineSpacing());
+        builder.Call<AndroidJavaObject>("setTextAlign", config.GetTextAlign());
+        builder.Call<AndroidJavaObject>("setBold", config.GetIsBold());
+        builder.Call<AndroidJavaObject>("setItalic", config.GetIsItalic());
+        builder.Call<AndroidJavaObject>("setMultipleLine", config.GetIsMultipleLine());
+
         return builder.Call<AndroidJavaObject>("build");
     }
 

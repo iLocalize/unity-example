@@ -44,7 +44,7 @@ public class iLocalizeiOSCore : IiLocalizeCore
     private static extern void unity_updateUserInfo_g2g(string userId, string userTags);
 
     [DllImport("__Internal")]
-    private static extern void unity_checkStringOverflow(string pageId, string stringId, string stringRealContent, float designWidth, float designHeight,float measuredWidth, float measuredHeight);
+    private static extern void unity_checkStringOverflow(string pageId, string stringId, string stringRealContent, float designWidth, float designHeight,float measuredWidth, float measuredHeight, string fontFamily, float fontSize, float lineSpacing, int textAlign, bool isBold, bool isItalic, bool isMultipleLine);
 
     [DllImport("__Internal")]
     private static extern void unity_enableEvaluateFunction(bool isOpen);
@@ -101,7 +101,7 @@ public class iLocalizeiOSCore : IiLocalizeCore
 
     public void CheckStringOverflow(iLCheckOverflowConfig checkOverflowConfig)
     {
-        unity_checkStringOverflow(checkOverflowConfig.GetPageId(), checkOverflowConfig.GetStringId(), checkOverflowConfig.GetStringRealContent(), checkOverflowConfig.GetDesignWidth(), checkOverflowConfig.GetDesignHeight(), checkOverflowConfig.GetMeasuredWidth(), checkOverflowConfig.GetMeasuredHeight());
+        unity_checkStringOverflow(checkOverflowConfig.GetPageId(), checkOverflowConfig.GetStringId(), checkOverflowConfig.GetStringRealContent(), checkOverflowConfig.GetDesignWidth(), checkOverflowConfig.GetDesignHeight(), checkOverflowConfig.GetMeasuredWidth(), checkOverflowConfig.GetMeasuredHeight(), checkOverflowConfig.GetFontFamily(), checkOverflowConfig.GetFontSize(), checkOverflowConfig.GetLineSpacing(), checkOverflowConfig.GetTextAlign(), checkOverflowConfig.GetIsBold(), checkOverflowConfig.GetIsItalic(), checkOverflowConfig.GetIsMultipleLine());
     }
 
     public void EnableEvaluateFunction(bool enable)
