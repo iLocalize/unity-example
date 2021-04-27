@@ -9,13 +9,10 @@ using UnityEngine.UI;
 
 public class TestBehaviourScript : MonoBehaviour
 {
-    private string appKey = "THIS IS YOUR APP KEY";
-    private string domain = "THIS IS YOUR DOMAIN";
-    private string appId = "THIS IS YOUR APP ID"; 
 
     private void Awake()
     {
-        iLocalize.Init("THIS IS YOUR APP ID", "THIS IS YOUR TARGET LANGUAGE", true);
+        iLocalize.Init("THIS IS YOUR APP KEY", "THIS IS YOUR TARGET LANGUAGE", true);
         iLocalize.SetOnTranslationPreparedCallback(onTranslationPrepared);
     }
     void onTranslationPrepared(bool isSuccess)
